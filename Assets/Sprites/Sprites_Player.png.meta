@@ -308,12 +308,12 @@ TextureImporter:
       name: Weapon_Melee
       rect:
         serializedVersion: 2
-        x: 12
-        y: 2
-        width: 7
-        height: 4
+        x: 50
+        y: 4
+        width: 9
+        height: 29
       alignment: 9
-      pivot: {x: 0.14285715, y: 0.75}
+      pivot: {x: 0.11111111, y: 0.10344827}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,6 +382,7 @@ TextureImporter:
       Weapon_Gun: 1879371055
       GrenadeLauncher_Projectile: -761554760
       Player_Move1: 1190974356
+      Sprites_Player_0: 409772016
       Gun_Particle: -971465223
       Gun_Projectile: -324629516
       Player_Move3: 1558848970
