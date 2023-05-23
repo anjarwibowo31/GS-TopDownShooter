@@ -10,7 +10,7 @@ public class Gun : Weapon
     public override void PlayerCombat_OnAttackButtonClicked(object sender, PlayerCombat.OnAttackEventArgs e)
     {
         GameObject obj = Instantiate(projectile, shootPoint.position, shootPoint.rotation, null);
-        obj.GetComponent<Projectile>().Damage = weaponDamage;
+        obj.GetComponent<Projectile>().Damage = WeaponDamage;
         obj.GetComponent<Projectile>().StartPos = shootPoint.position;
     }
 }

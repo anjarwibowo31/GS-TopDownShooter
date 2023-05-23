@@ -1,11 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour, IDamagable
 {
-    public float MaxHealth { get; private set; }
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float experiencePointsGiven;
+
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+        set { maxHealth = value; }
+    }
+
     public float Currenthealth { get; private set; }
+
 
     private void Start()
     {
@@ -14,13 +24,15 @@ public class Health : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage)
     {
-        if (Currenthealth - damage < 0)
+        if (Currenthealth - damage <= 0)
         {
             Destroy(this.gameObject);
+            ProgressDataKeeper.Instance.AwardExperience(experiencePointsGiven);
         }
         else
         {
             Currenthealth -= damage;
+            print($"{gameObject.name}: {Currenthealth}");
         }
     }
 }

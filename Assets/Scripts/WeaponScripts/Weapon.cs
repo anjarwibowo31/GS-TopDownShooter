@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float weaponDamage { get; set; }
+    [SerializeField]
+    private float weaponDamage;
 
-    public bool isRequireHand { get; set; }
+    public float WeaponDamage
+    {
+        get { return weaponDamage; }
+        set { WeaponDamage = value; }
+    }
 
     private void OnEnable()
     {
