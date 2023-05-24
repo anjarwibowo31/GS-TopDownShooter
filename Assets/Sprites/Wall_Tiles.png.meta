@@ -334,7 +334,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -342,6 +342,27 @@ TextureImporter:
       bones: []
       spriteID: 999eecb6bce6f704d83015d26d6fbf0a
       internalID: -665061847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Tiles_11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee909cd690091342b0d4a6751ad0a57
+      internalID: 329859229
       vertices: []
       indices: 
       edges: []
@@ -366,6 +387,7 @@ TextureImporter:
       Wall_Tiles_9: -2090735106
       Wall_Tiles_6: -404006732
       Wall_Tiles_4: 96796563
+      Wall_Tiles_11: 329859229
       Wall_Tiles_5: 597793576
       Wall_Tiles_0: 2079314087
   spritePackingTag: 

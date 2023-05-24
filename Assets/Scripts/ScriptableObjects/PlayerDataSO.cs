@@ -21,5 +21,5 @@ public class PlayerDataSO : ScriptableObject
         Grenade = 2
     }
 
-    public WeaponType weapon { get; set; }
+    public WeaponType Weapon { get; set; }
 }

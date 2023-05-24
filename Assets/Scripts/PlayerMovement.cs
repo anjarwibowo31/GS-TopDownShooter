@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
         public bool isMoving;
     }
 
-    [SerializeField] public PlayerDataSO playState;
+    [SerializeField] private PlayerDataSO playState; // Not implemented yet
     [SerializeField] private float moveSpeed = 5f;
 
     private Rigidbody2D rb;
