@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float Damage { get; set; }
-    public Vector3 StartPos { get; set; }
+    //public Vector3 StartPos { get; set; }
 
     [SerializeField] private float lifetime = 2f;
 
