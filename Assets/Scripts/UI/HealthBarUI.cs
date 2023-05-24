@@ -18,13 +18,19 @@ public class HealthBarUI : MonoBehaviour
         }
         else
         {
-            health = GetComponentInParent<Health>();
+            health = Player.GetPlayer.GetComponent<Health>();
         }
         slider = GetComponentInChildren<Slider>();
     }
 
     private void LateUpdate()
     {
+        if (health == null)
+        {
+            slider.value = 0;
+            return;
+        }
+
         float healthValue = health.Currenthealth / health.MaxHealth;
         slider.value = healthValue;
 

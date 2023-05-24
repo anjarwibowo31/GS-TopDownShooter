@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
         public bool isMoving;
     }
 
-    [SerializeField] private PlayerDataSO playState; // Not implemented yet
     [SerializeField] private float moveSpeed = 5f;
 
     private Rigidbody2D rb;
@@ -29,21 +28,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HandleMovement();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playState.PlayState = PlayerDataSO.State.Play;
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            playState.PlayState = PlayerDataSO.State.Dead;
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            playState.PlayState = PlayerDataSO.State.Victory;
-        }
     }
     private void FixedUpdate()
     {
