@@ -18,10 +18,9 @@ public class Gun : Weapon
     private float reloadTimeRunning;
     private bool isReloading = false;
 
-    private void Start()
+    private void Awake()
     {
         ammo.GunAmmo = maxAmmo;
-        reloadTimeUIImage = reloadTimeUI.GetComponentInChildren<Image>();
     }
 
     public override void PlayerCombat_OnAttackButtonClicked(object sender, PlayerCombat.OnAttackEventArgs e)
@@ -37,6 +36,17 @@ public class Gun : Weapon
 
     private void Update()
     {
+        // Ada masalah di Execution order, makanya tak taruh sini, FIX LATER
+        if (reloadTimeUIImage == null)
+        {
+            reloadTimeUIImage = reloadTimeUI.GetComponentInChildren<Image>();
+
+            if (reloadTimeUIImage != null)
+            {
+                reloadTimeUI.SetActive(false);
+            }
+        }
+
         if (!isReloading && ammo.GunAmmo <= 0)
         {
             reloadTimeRunning = reloadTime;

@@ -19,6 +19,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject[] weapons;
     [SerializeField] private Transform aimTransform;
     [SerializeField] private float weaponSwitchSpeed = 2f;
+    [SerializeField] private AmmoSO ammoSO;
 
     public int selectedWeapon;
     private float weaponSwitchCooldown = 0f;

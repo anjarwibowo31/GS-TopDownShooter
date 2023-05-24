@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b221ebc09c5b20f488454354ba8d17b6, type: 3}
   m_Name: AmmoSO
   m_EditorClassIdentifier: 
+  gunAmmoObject: {fileID: 3930803564622679778, guid: 1b994a1c54a924349bb34d65c46d9cc5, type: 3}
+  grenadeAmmoObject: {fileID: 62558782443858888, guid: bbdd80893aa49d849a1055b617ab68c4, type: 3}

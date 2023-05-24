@@ -17,10 +17,9 @@ public class GrenadeLauncher : Weapon
     private float reloadTimeRunning;
     private bool isReloading = false;
 
-    private void Start()
+    private void Awake()
     {
         ammo.GrenadeAmmo = maxAmmo;
-        reloadTimeUIImage = reloadTimeUI.GetComponentInChildren<Image>();
     }
 
     public override void PlayerCombat_OnAttackButtonClicked(object sender, PlayerCombat.OnAttackEventArgs e)
@@ -31,11 +30,22 @@ public class GrenadeLauncher : Weapon
             GameObject obj = Instantiate(projectile, shootPoint.position, shootPoint.rotation, null);
             obj.GetComponent<Grenade>().Damage = WeaponDamage;
             isReloading = true;
+            reloadTimeRunning = reloadTime;
         }
     }
 
     private void Update()
     {
+        if (reloadTimeUIImage == null)
+        {
+            reloadTimeUIImage = reloadTimeUI.GetComponentInChildren<Image>();
+
+            if (reloadTimeUIImage != null)
+            {
+                reloadTimeUI.SetActive(false);
+            }
+        }
+
         if (isReloading)
         {
             reloadTimeUI.SetActive(true);
