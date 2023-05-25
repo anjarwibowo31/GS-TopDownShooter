@@ -11,8 +11,6 @@ public class PlayerAnimator : MonoBehaviour
 
     [SerializeField] private Animator playerAnimator;
 
-    private string currentState;
-
     private void Start()
     {
         PlayerMovement.IsMoving += PlayerMovement_IsMoving;

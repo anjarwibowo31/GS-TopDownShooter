@@ -10,21 +10,21 @@ public class HealthBarUI : MonoBehaviour
     private Health health;
     private Slider slider;
 
-    private void Start()
-    {
-        if (hasParent)
-        {
-            health = GetComponentInParent<Health>();
-        }
-        else
-        {
-            health = PlayerObject.GetPlayer.GetComponent<Health>();
-        }
-        slider = GetComponentInChildren<Slider>();
-    }
-
     private void LateUpdate()
     {
+        if (health == null)
+        {
+            if (hasParent)
+            {
+                health = GetComponentInParent<Health>();
+            }
+            else
+            {
+                health = PlayerObject.GetPlayer.GetComponent<Health>();
+            }
+            slider = GetComponentInChildren<Slider>();
+        }
+
         if (health == null)
         {
             slider.value = 0;

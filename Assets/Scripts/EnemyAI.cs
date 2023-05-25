@@ -125,4 +125,9 @@ public class EnemyAI : MonoBehaviour
         aimTransform.localScale = Vector3.one * aimLocalScale;
         aimTransform.localEulerAngles = new Vector3(0, 0, aimAngle * aimLocalScale);
     }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance.EnemyDestroyed(this);
+    }
 }
