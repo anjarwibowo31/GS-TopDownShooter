@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
     }
+
     private void FixedUpdate()
     {
         rb.velocity = moveDirection * moveSpeed;

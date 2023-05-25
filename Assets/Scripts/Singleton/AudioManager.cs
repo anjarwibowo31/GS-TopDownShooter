@@ -9,4 +9,17 @@ public class AudioManager : MonoBehaviour
     public float BGMVolume { get { return BGMVolume; } set { BGMVolume = 1f; } }
     public float SFXVolume { get { return SFXVolume; } set { SFXVolume = 1f; } }
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+    }
 }

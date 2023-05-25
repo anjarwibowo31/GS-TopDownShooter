@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProgressDataKeeper : MonoBehaviour
 {
     public static ProgressDataKeeper Instance { get; private set; }
 
-    public float Coin { get; set; }
-    public float Experience { get; set; }
+    private float coin = 0;
+    public float Coin
+    {
+        get { return coin; }
+        set { coin = value; }
+    }
+
+    private float experience = 0;
+    public float Experience
+    {
+        get { return experience; }
+        set { experience = value; }
+    }
 
     private void Awake()
     {
@@ -31,5 +43,10 @@ public class ProgressDataKeeper : MonoBehaviour
     private void Update()
     {
         print("Experience Points " + Instance.Experience);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

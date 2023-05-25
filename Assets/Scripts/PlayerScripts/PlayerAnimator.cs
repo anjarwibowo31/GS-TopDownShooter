@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    private const string IDLE = "Idle";
-    private const string MOVE = "Move";
+    private string IDLE = "Idle";
+    private string MOVE = "Move";
     private const string DEAD = "Dead";
     private const string VICTORY = "Victory";
 
@@ -23,13 +23,12 @@ public class PlayerAnimator : MonoBehaviour
         ChangeAnimationsState(e.isMoving);
     }
 
-    //
-    private void ChangeAnimationsState(string newState)
-    {
-        if (currentState == newState) return;
-        playerAnimator.Play(newState);
-        currentState = newState;
-    }
+    //private void ChangeAnimationsState(string newState)
+    //{
+    //    if (currentState == newState) return;
+    //    playerAnimator.Play(newState);
+    //    currentState = newState;
+    //}
 
     private void ChangeAnimationsState(bool isMoving)
     {
@@ -41,5 +40,10 @@ public class PlayerAnimator : MonoBehaviour
         {
             playerAnimator.Play(IDLE);
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log(playerAnimator);
     }
 }
