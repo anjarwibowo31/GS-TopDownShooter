@@ -24,6 +24,12 @@ public class EnemyAI : MonoBehaviour
     private float timeToshot;
     private bool moveToPlayer;
     private float aimAngle;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     {
@@ -36,6 +42,7 @@ public class EnemyAI : MonoBehaviour
         float distance = Vector2.Distance(raypoint.position, playerPos);
         bool outOfSight = Physics2D.Raycast(raypoint.position, playerPos - (Vector2)raypoint.position, distance, world);
         bool? seePlayer = null;
+
         if (distance < detectRadius && !outOfSight)
         {
             seePlayer = true;
@@ -58,6 +65,11 @@ public class EnemyAI : MonoBehaviour
         {
             MoveTo(playerPos, chasingSpeed);
             print("Move");
+            animator.Play("Move");
+        }
+        else
+        {
+            animator.Play("Idle");
         }
 
         if (outOfSight)
@@ -71,10 +83,6 @@ public class EnemyAI : MonoBehaviour
             HandleAiming();
             HandleFacing();
             HandleAttack();
-        }
-        else
-        {
-            aimAngle = Mathf.Round(aimAngle / 90) * 90;
         }
     }
 

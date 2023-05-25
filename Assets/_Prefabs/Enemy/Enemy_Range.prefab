@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8728406688113426101}
   - component: {fileID: 8728406688113426122}
+  - component: {fileID: 5169356186486528220}
   m_Layer: 7
   m_Name: Enemy_Body
   m_TagString: Untagged
@@ -337,6 +338,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5169356186486528220
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728406688113426100}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73a934368285631478f6cbe3cbca6c88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8728406688275325487
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +522,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   detectRadius: 6
-  chasingRadius: 9
+  chasingRadius: 12
   chasingSpeed: 3
   roamingSpeed: 5
   attackRange: 4

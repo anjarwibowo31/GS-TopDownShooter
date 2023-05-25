@@ -26361,6 +26361,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5997926366687640233, guid: 3a054a99d92a68b4bbfde9296944c8d5, type: 3}
+      propertyPath: m_GridSnapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5997926366687640234, guid: 3a054a99d92a68b4bbfde9296944c8d5, type: 3}
       propertyPath: m_RootOrder
       value: 15
