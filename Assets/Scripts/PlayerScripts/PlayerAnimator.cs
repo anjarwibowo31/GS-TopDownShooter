@@ -16,6 +16,11 @@ public class PlayerAnimator : MonoBehaviour
         PlayerMovement.IsMoving += PlayerMovement_IsMoving;
     }
 
+    private void OnDestroy()
+    {
+        PlayerMovement.IsMoving -= PlayerMovement_IsMoving;
+    }
+
     private void PlayerMovement_IsMoving(object sender, PlayerMovement.IsMovingEventArgs e)
     {
         ChangeAnimationsState(e.isMoving);
