@@ -32,4 +32,9 @@ public class OptionsUI : MonoBehaviour
     {
         AudioManager.Instance.OnVolumeChange(sliderBGM.value);
     }
+
+    public void OnMuteToggle()
+    {
+        AudioManager.Instance.OnMuteToogle();
+    }
 }

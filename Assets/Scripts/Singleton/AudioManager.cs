@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
     public bool IsMute { get; private set; }
 
-    public float BGMVolume { get { return BGMVolume; } set { BGMVolume = 1f; } }
+    private float BGMVolumeValue = 1f;
+    public float BGMVolume { get { return BGMVolumeValue; } set { BGMVolume = BGMVolumeValue; } }
     public float SFXVolume { get { return SFXVolume; } set { SFXVolume = 1f; } }
 
     private void Awake()
