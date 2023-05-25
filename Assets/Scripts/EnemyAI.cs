@@ -63,6 +63,7 @@ public class EnemyAI : MonoBehaviour
         if (outOfSight)
         {
             seePlayer = false;
+            aimAngle = Mathf.Round(aimAngle / 90) * 90;
         }
 
         if (seePlayer == true)
@@ -70,6 +71,10 @@ public class EnemyAI : MonoBehaviour
             HandleAiming();
             HandleFacing();
             HandleAttack();
+        }
+        else
+        {
+            aimAngle = Mathf.Round(aimAngle / 90) * 90;
         }
     }
 
