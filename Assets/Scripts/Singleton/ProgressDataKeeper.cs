@@ -30,6 +30,6 @@ public class ProgressDataKeeper : MonoBehaviour
 
     private void Update()
     {
-        print(Instance.Experience);
+        print("Experience Points " + Instance.Experience);
     }
 }

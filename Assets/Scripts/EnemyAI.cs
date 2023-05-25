@@ -9,25 +9,30 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float chasingRadius;
     [SerializeField] private float chasingSpeed;
     [SerializeField] private float roamingSpeed;
-
-    private bool seePlayer;
+    [SerializeField] private float attackRange;
+    private bool moveToPlayer;
 
     private void Update()
     {
         Vector2 playerPos = PlayerObject.GetPlayer.transform.position;
         float distance = Vector2.Distance(transform.position, playerPos);
-        bool outOfSight = Physics2D.Raycast(transform.position, playerPos, distance, world);
-        print(distance);
+        bool outOfSight = Physics2D.Raycast(transform.position, playerPos - (Vector2)transform.position, distance, world);
+
         if (distance < detectRadius && !outOfSight)
         {
-            seePlayer = true;
+            if (distance < attackRange)
+            {
+                moveToPlayer = false;
+                return;
+            }
+            moveToPlayer = true;
         }
         else if (distance > chasingRadius)
         {
-            seePlayer = false;
+            moveToPlayer = false;
         }
 
-        if (seePlayer && !outOfSight)
+        if (moveToPlayer && !outOfSight)
         {
             MoveTo(playerPos, chasingSpeed);
             print("Move");
