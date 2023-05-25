@@ -18,7 +18,7 @@ public class HealthBarUI : MonoBehaviour
         }
         else
         {
-            health = Player.GetPlayer.GetComponent<Health>();
+            health = PlayerObject.GetPlayer.GetComponent<Health>();
         }
         slider = GetComponentInChildren<Slider>();
     }

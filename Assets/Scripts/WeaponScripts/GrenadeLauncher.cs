@@ -27,7 +27,7 @@ public class GrenadeLauncher : Weapon
         if (ammo.GrenadeAmmo != 0 && !isReloading)
         {
             ammo.GrenadeAmmo--;
-            GameObject obj = Instantiate(projectile, shootPoint.position, shootPoint.rotation, null);
+            GameObject obj = Instantiate(projectile, shootPoint.position, Quaternion.identity, null);
             obj.GetComponent<Grenade>().Damage = WeaponDamage;
             isReloading = true;
             reloadTimeRunning = reloadTime;
